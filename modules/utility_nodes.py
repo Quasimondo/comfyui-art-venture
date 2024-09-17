@@ -397,6 +397,8 @@ class UtilRandomInt:
         return torch.rand(1).item()
 
     def random_int(self, min: int, max: int):
+        if max<=min:
+            return(min, str(min))
         num = torch.randint(min, max, (1,)).item()
         return (num, str(num))
 
